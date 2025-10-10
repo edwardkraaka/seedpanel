@@ -55,6 +55,7 @@ const getSeedPhraseFromEnv = (): string[] => {
 export default function SeedPhrasePage({ onBack, theme, onToggleTheme }: SeedPhrasePageProps) {
   const [copied, setCopied] = useState(false)
   const [isRevealed, setIsRevealed] = useState(false)
+  const [copiedWordIndex, setCopiedWordIndex] = useState<number | null>(null)
   const isDark = theme === "dark"
 
   // Get seed phrase from environment variable
@@ -65,6 +66,12 @@ export default function SeedPhrasePage({ onBack, theme, onToggleTheme }: SeedPhr
     await navigator.clipboard.writeText(phraseText)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+  }
+
+  const handleWordCopy = async (word: string, index: number) => {
+    await navigator.clipboard.writeText(word)
+    setCopiedWordIndex(index)
+    setTimeout(() => setCopiedWordIndex(null), 1500)
   }
 
   return (
@@ -160,12 +167,18 @@ export default function SeedPhrasePage({ onBack, theme, onToggleTheme }: SeedPhr
                 {SEED_PHRASE.map((word, index) => (
                   <div
                     key={index}
-                    className={`flex items-center gap-3 p-4 ${isDark ? "bg-gray-800/50 border-gray-700" : "bg-white border-gray-300"} rounded-xl border`}
+                    onClick={() => handleWordCopy(word, index)}
+                    className={`flex items-center gap-3 p-4 ${isDark ? "bg-gray-800/50 border-gray-700 hover:bg-gray-800" : "bg-white border-gray-300 hover:bg-gray-50"} rounded-xl border cursor-pointer transition-all duration-200 relative group`}
                   >
                     <span className={`${isDark ? "text-gray-500" : "text-gray-400"} font-semibold text-sm w-6`}>
                       {index + 1}.
                     </span>
-                    <span className={`${isDark ? "text-white" : "text-black"} font-medium text-base`}>{word}</span>
+                    <span className={`${isDark ? "text-white" : "text-black"} font-medium text-base flex-1`}>{word}</span>
+                    {copiedWordIndex === index ? (
+                      <CheckIcon className={`w-4 h-4 ${isDark ? "text-[#00D4AA]" : "text-[#0052FF]"}`} />
+                    ) : (
+                      <CopyIcon className={`w-4 h-4 ${isDark ? "text-gray-600" : "text-gray-400"} opacity-0 group-hover:opacity-100 transition-opacity`} />
+                    )}
                   </div>
                 ))}
               </div>

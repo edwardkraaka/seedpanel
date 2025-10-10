@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ArrowLeftIcon, LockIcon, SunIcon, MoonIcon } from "lucide-react"
+import { LockIcon, SunIcon, MoonIcon } from "lucide-react"
 import { Inter } from "next/font/google"
 import Image from "next/image"
 
@@ -17,12 +17,11 @@ const inter = Inter({
 
 interface CaseNumberFormProps {
   onSuccess: () => void
-  onBack: () => void
   theme: "dark" | "light"
   onToggleTheme: () => void
 }
 
-export default function CaseNumberForm({ onSuccess, onBack, theme, onToggleTheme }: CaseNumberFormProps) {
+export default function CaseNumberForm({ onSuccess, theme, onToggleTheme }: CaseNumberFormProps) {
   const [caseNumber, setCaseNumber] = useState("")
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -37,7 +36,8 @@ export default function CaseNumberForm({ onSuccess, onBack, theme, onToggleTheme
     setIsLoading(true)
 
     setTimeout(() => {
-      if (caseNumber.trim() === CORRECT_CASE_NUMBER) {
+      // Case-insensitive comparison
+      if (caseNumber.trim().toUpperCase() === CORRECT_CASE_NUMBER.toUpperCase()) {
         onSuccess()
       } else {
         setError("Invalid case number. Please try again.")
@@ -58,35 +58,25 @@ export default function CaseNumberForm({ onSuccess, onBack, theme, onToggleTheme
         }}
       />
 
-      {/* Header with Back and Theme Toggle */}
+      {/* Header with Logo and Theme Toggle */}
       <div className="fixed top-8 left-0 right-0 z-50 flex items-center justify-between px-8 max-w-3xl mx-auto">
-        <Button
-          onClick={onBack}
-          variant="ghost"
-          className={`${isDark ? "text-white hover:bg-gray-800" : "text-black hover:bg-gray-100"} flex items-center gap-2 font-medium`}
-        >
-          <ArrowLeftIcon className="w-5 h-5" />
-          Back
-        </Button>
-        <div className="flex items-center gap-4">
-          <div className="relative h-6 w-24">
-            <Image
-              src={isDark ? "/Coinbase_Wordmark_White.svg" : "/Coinbase_Wordmark.svg"}
-              alt="Coinbase"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={onToggleTheme}
-            className={`${isDark ? "hover:bg-gray-800" : "hover:bg-gray-100"} rounded-full`}
-          >
-            {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
-          </Button>
+        <div className="relative h-6 w-24">
+          <Image
+            src={isDark ? "/Coinbase_Wordmark_White.svg" : "/Coinbase_Wordmark.svg"}
+            alt="Coinbase"
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={onToggleTheme}
+          className={`${isDark ? "hover:bg-gray-800" : "hover:bg-gray-100"} rounded-full`}
+        >
+          {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+        </Button>
       </div>
 
       {/* Form Content */}
@@ -124,7 +114,7 @@ export default function CaseNumberForm({ onSuccess, onBack, theme, onToggleTheme
                   setCaseNumber(e.target.value)
                   setError("")
                 }}
-                placeholder="CASE-XXXX-XXX"
+                placeholder="XXXXXXX"
                 className={`w-full ${isDark ? "bg-gray-900/50 border-gray-800 text-white placeholder:text-gray-600" : "bg-white border-gray-300 text-black placeholder:text-gray-400"} h-14 text-base font-medium rounded-xl focus:ring-2 ${isDark ? "focus:ring-[#00D4AA]" : "focus:ring-[#0052FF]"} transition-all`}
                 disabled={isLoading}
               />
@@ -146,7 +136,7 @@ export default function CaseNumberForm({ onSuccess, onBack, theme, onToggleTheme
             <p
               className={`${isDark ? "text-blue-400" : "text-blue-700"} text-sm font-medium text-center leading-relaxed`}
             >
-              Your case number was provided in your confirmation email
+              Your case number was provided in your confirmation SMS
             </p>
           </div>
         </div>
