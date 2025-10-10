@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  seedpanel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: seedpanel-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    env_file:
+      - .env.local
+    restart: unless-stopped
+    networks:
+      - seedpanel-network
+
+networks:
+  seedpanel-network:
+    driver: bridge

@@ -1,0 +1,157 @@
+{
+  "designSystem": {
+    "name": "Coinbase Design Analysis",
+    "version": "2024",
+    "description": "Comprehensive design profile of Coinbase homepage"
+  },
+  "colors": {
+    "primary": {
+      "blue": "#0052FF",
+      "blueHover": "#0047E0",
+      "description": "Vibrant, saturated blue - primary brand color"
+    },
+    "backgrounds": {
+      "white": "#FFFFFF",
+      "lightGray": "#F7F8FA",
+      "darkSection": "#000000",
+      "cardBackground": "#FFFFFF",
+      "description": "Clean white base with subtle gray tints, high-contrast dark sections"
+    },
+    "text": {
+      "primary": "#000000",
+      "secondary": "#5B616E",
+      "tertiary": "#8A92A3",
+      "onDark": "#FFFFFF",
+      "description": "Strong hierarchy with black headlines and gray body text"
+    },
+    "accents": {
+      "green": "#05B169",
+      "red": "#DF5F67",
+      "lightBlue": "#E8F0FF",
+      "description": "Financial UI colors for gains/losses, subtle blue tints"
+    },
+    "borders": {
+      "light": "#E7EAEE",
+      "medium": "#D8DCE3",
+      "description": "Subtle borders for cards and dividers"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "Coinbase Sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "fallback": "system-ui, sans-serif",
+      "description": "Custom geometric sans-serif with clean, modern appearance"
+    },
+    "fontSizes": {
+      "hero": "64px - 80px",
+      "h1": "48px - 56px",
+      "h2": "32px - 40px",
+      "h3": "24px - 28px",
+      "body": "16px - 18px",
+      "small": "14px",
+      "description": "Large, bold headlines with clear hierarchy"
+    },
+    "fontWeights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "description": "Bold for headlines, regular for body"
+    },
+    "lineHeight": {
+      "tight": "1.1 - 1.2",
+      "normal": "1.5",
+      "relaxed": "1.6 - 1.7",
+      "description": "Tight for headlines, relaxed for body text"
+    },
+    "letterSpacing": {
+      "tight": "-0.02em",
+      "normal": "0",
+      "wide": "0.02em",
+      "description": "Slightly tight for large headlines"
+    }
+  },
+  "spacing": {
+    "scale": "8px base unit",
+    "sections": "80px - 120px vertical padding",
+    "containers": "24px - 48px horizontal padding",
+    "elements": "16px - 32px between elements",
+    "description": "Generous white space, spacious layout"
+  },
+  "layout": {
+    "maxWidth": "1280px - 1440px",
+    "grid": "12-column grid system",
+    "breakpoints": {
+      "mobile": "320px - 767px",
+      "tablet": "768px - 1023px",
+      "desktop": "1024px+"
+    },
+    "description": "Centered content with wide margins, responsive grid"
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#0052FF",
+        "color": "#FFFFFF",
+        "borderRadius": "8px",
+        "padding": "12px 24px",
+        "fontSize": "16px",
+        "fontWeight": 600,
+        "description": "Rounded pill-shaped buttons with solid fills"
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "#0052FF",
+        "border": "2px solid #0052FF",
+        "borderRadius": "8px",
+        "description": "Outlined variant"
+      }
+    },
+    "cards": {
+      "background": "#FFFFFF",
+      "border": "1px solid #E7EAEE",
+      "borderRadius": "16px",
+      "shadow": "0 2px 8px rgba(0,0,0,0.04)",
+      "padding": "24px - 32px",
+      "description": "Clean cards with subtle shadows and rounded corners"
+    },
+    "inputs": {
+      "background": "#FFFFFF",
+      "border": "1px solid #D8DCE3",
+      "borderRadius": "8px",
+      "padding": "12px 16px",
+      "fontSize": "16px",
+      "focusBorder": "#0052FF",
+      "description": "Clean inputs with subtle borders"
+    },
+    "phoneMockups": {
+      "shadow": "0 20px 60px rgba(0,0,0,0.15)",
+      "borderRadius": "32px",
+      "description": "Prominent phone mockups with realistic shadows"
+    }
+  },
+  "designPrinciples": {
+    "aesthetic": "Minimalist, clean, professional",
+    "trust": "High contrast, clear hierarchy, professional typography",
+    "whitespace": "Generous spacing, uncluttered layout",
+    "contrast": "Strong contrast between sections (white/black backgrounds)",
+    "mobileFirst": "Mobile mockups prominently featured",
+    "clarity": "Clear CTAs with high-contrast buttons",
+    "accessibility": "High contrast ratios, clear focus states"
+  },
+  "interactions": {
+    "hover": {
+      "buttons": "Slight darkening, smooth transition",
+      "cards": "Subtle lift with shadow increase",
+      "links": "Color change to darker blue"
+    },
+    "transitions": "200ms - 300ms ease-in-out",
+    "animations": "Subtle, purposeful, never distracting"
+  },
+  "iconography": {
+    "style": "Line icons, consistent stroke width",
+    "size": "20px - 24px standard",
+    "color": "Matches text color or brand blue",
+    "description": "Clean, minimal icons"
+  }
+}
