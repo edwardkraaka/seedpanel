@@ -32,7 +32,7 @@ RUN npm ci --omit=dev --legacy-peer-deps
 # Copy built application from builder
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.ts ./
+COPY --from=builder /app/next.config.mjs ./
 COPY --from=builder /app/postcss.config.mjs ./
 
 # Create non-root user
