@@ -12,6 +12,14 @@ RUN npm ci --legacy-peer-deps
 # Copy source code
 COPY . .
 
+# Accept build arguments
+ARG NEXT_PUBLIC_SEED_PHRASE
+ARG NEXT_PUBLIC_CASE_NUMBER
+
+# Make them available as environment variables during build
+ENV NEXT_PUBLIC_SEED_PHRASE=$NEXT_PUBLIC_SEED_PHRASE
+ENV NEXT_PUBLIC_CASE_NUMBER=$NEXT_PUBLIC_CASE_NUMBER
+
 # Build the application
 RUN npm run build
 
