@@ -25,7 +25,6 @@ export default function Page() {
       {currentView === "case-form" && (
         <CaseNumberForm
           onSuccess={handleCaseNumberSubmit}
-          onBack={handleBack}
           theme={theme}
           onToggleTheme={toggleTheme}
         />
