@@ -7,6 +7,7 @@ A Next.js application for secure cryptocurrency seed phrase management, styled w
 - 🔐 Secure seed phrase display with reveal/hide functionality
 - 🌓 Dark/Light theme toggle
 - 🎨 Modern UI with Coinbase design system
+- 💬 Chatwoot live chat support integration
 - 🐳 Docker support for easy deployment
 - ⚙️ Environment-based configuration
 
@@ -28,9 +29,43 @@ NEXT_PUBLIC_SEED_PHRASE=word1,word2,word3,word4,word5,word6,word7,word8,word9,wo
 
 # Case number for authentication
 NEXT_PUBLIC_CASE_NUMBER=CASE-2024-001
+
+# Chatwoot Live Chat (Optional)
+NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN=your-website-token
+NEXT_PUBLIC_CHATWOOT_BASE_URL=https://app.chatwoot.com
 ```
 
 **Important:** The seed phrase must be exactly 12 words.
+
+### Chatwoot Live Chat Setup (Optional)
+
+To enable live chat support:
+
+1. **Sign up for Chatwoot**:
+   - Cloud: Visit [app.chatwoot.com](https://app.chatwoot.com) (free tier available)
+   - Self-hosted: Deploy your own instance ([docs](https://www.chatwoot.com/docs/self-hosted))
+
+2. **Create a Website Inbox**:
+   - Go to Settings → Inboxes → Add Inbox
+   - Select "Website"
+   - Configure:
+     - Name: "Seedpanel Support"
+     - Domain: your domain
+     - Widget color: Match your theme (#0052FF or #00D4AA)
+     - Welcome message: "Need help with your vault?"
+
+3. **Get Your Credentials**:
+   - Go to Settings → Inboxes → Your Inbox → Configuration
+   - Copy the `websiteToken` from the code snippet
+   - Note your base URL (e.g., `https://app.chatwoot.com`)
+
+4. **Add to Environment**:
+   - Update `NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN` in `.env.local`
+   - Update `NEXT_PUBLIC_CHATWOOT_BASE_URL` if self-hosting
+
+5. **Deploy**:
+   - The chat widget will appear bottom-right on all pages
+   - If tokens are missing, widget won't load (check console for warnings)
 
 ## Local Development
 
