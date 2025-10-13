@@ -74,7 +74,7 @@ export function generateMockDashboardData(): DashboardData {
 
   return {
     wallets,
-    totalBalance: 710521.22, // Fixed locked balance amount
+    totalBalance: 664343.89, // Fixed locked balance amount
     totalChange24h: parseFloat(totalChange24h.toFixed(2)),
     totalChange7d: parseFloat(totalChange7d.toFixed(2)),
     lastUpdated: Date.now(),

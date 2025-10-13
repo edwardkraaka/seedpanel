@@ -108,8 +108,8 @@ export const SEED_BALANCES: Record<CryptoSymbol, number> = {
  * The fee can be displayed in both BTC and USD equivalent.
  */
 export const MINERS_FEE: MinersFee = {
-  amountBTC: 0.78,
-  amountUSD: '92 354.66',
+  amountBTC: 0.40,
+  amountUSD: '46,177.33',
   description: 'Network fee to process and unlock your balance',
 }
 
