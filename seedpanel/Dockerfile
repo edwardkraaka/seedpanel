@@ -35,24 +35,14 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV=production
 
-# Copy package files
-COPY package*.json ./
-
-# Install only production dependencies
-RUN npm ci --omit=dev --legacy-peer-deps
-
-# Copy built application from builder
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.mjs ./
-COPY --from=builder /app/postcss.config.mjs ./
-
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nextjs -u 1001
 
-# Change ownership
-RUN chown -R nextjs:nodejs /app
+# Copy standalone server from builder
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
 # Switch to non-root user
 USER nextjs
@@ -63,5 +53,5 @@ EXPOSE 3000
 # Set hostname
 ENV HOSTNAME="0.0.0.0"
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application with node (faster than npm start)
+CMD ["node", "server.js"]

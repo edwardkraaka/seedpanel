@@ -92,9 +92,9 @@ export const TIME_RANGES: Record<TimeRange, TimeRangeConfig> = {
  *   ETH: 5.2    -> User owns 5.2 Ethereum
  */
 export const SEED_BALANCES: Record<CryptoSymbol, number> = {
-  BTC: 0.5,     // Bitcoin balance
-  ETH: 5.2,     // Ethereum balance
-  LTC: 25,      // Litecoin balance
+  BTC: 4,     // Bitcoin balance
+  ETH: 60.2,     // Ethereum balance
+  LTC: 1,      // Litecoin balance
   LINK: 800,    // Chainlink balance
   BNB: 15,      // Binance Coin balance
   SOL: 120,     // Solana balance
