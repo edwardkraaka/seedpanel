@@ -227,6 +227,18 @@ export default function SeedPhrasePage({ onBack, theme, onToggleTheme }: SeedPhr
             </div>
           )}
 
+          {/* Dashboard Link */}
+          {isRevealed && (
+            <div className="mt-4">
+              <Button
+                onClick={() => window.location.href = '/dashboard'}
+                className={`w-full ${isDark ? "bg-gray-800 hover:bg-gray-700 text-white" : "bg-gray-100 hover:bg-gray-200 text-black"} text-base py-6 rounded-xl font-semibold transition-colors`}
+              >
+                View Dashboard →
+              </Button>
+            </div>
+          )}
+
           {/* Security Tips */}
           <div
             className={`mt-8 p-6 ${isDark ? "bg-gray-900/50 border-gray-800" : "bg-gray-50 border-gray-200"} border-2 rounded-2xl`}

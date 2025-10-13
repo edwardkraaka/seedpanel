@@ -93,27 +93,90 @@
       "primary": {
         "background": "#0052FF",
         "color": "#FFFFFF",
-        "borderRadius": "8px",
-        "padding": "12px 24px",
+        "borderRadius": "9999px",
+        "padding": "16px 40px",
         "fontSize": "16px",
         "fontWeight": 600,
-        "description": "Rounded pill-shaped buttons with solid fills"
+        "shadow": "0 4px 12px rgba(0,82,255,0.24)",
+        "hoverShadow": "0 6px 16px rgba(0,82,255,0.32)",
+        "description": "Pill-shaped buttons with medium shadow depth"
       },
       "secondary": {
         "background": "transparent",
         "color": "#0052FF",
         "border": "2px solid #0052FF",
-        "borderRadius": "8px",
-        "description": "Outlined variant"
+        "borderRadius": "9999px",
+        "padding": "16px 40px",
+        "description": "Outlined pill-shaped variant"
       }
     },
     "cards": {
+      "standard": {
+        "background": "#FFFFFF",
+        "border": "1px solid #E7EAEE",
+        "borderRadius": "16px",
+        "shadow": "0 2px 8px rgba(0,0,0,0.04)",
+        "padding": "24px - 32px",
+        "description": "Clean cards with subtle shadows and rounded corners"
+      },
+      "minimal": {
+        "background": "#FFFFFF",
+        "border": "1px solid rgba(0,0,0,0.06)",
+        "borderRadius": "16px",
+        "shadow": "0 1px 3px rgba(0,0,0,0.04)",
+        "hoverShadow": "0 4px 12px rgba(0,0,0,0.08)",
+        "padding": "24px",
+        "description": "Ultra-minimal cards for crypto trading interfaces"
+      },
+      "feature": {
+        "background": "#FFFFFF",
+        "border": "1px solid #E7EAEE",
+        "borderRadius": "16px",
+        "shadow": "0 1px 2px rgba(0,0,0,0.03)",
+        "padding": "32px",
+        "description": "Feature cards with large icons, used in grid layouts"
+      }
+    },
+    "pillBadges": {
       "background": "#FFFFFF",
-      "border": "1px solid #E7EAEE",
-      "borderRadius": "16px",
-      "shadow": "0 2px 8px rgba(0,0,0,0.04)",
-      "padding": "24px - 32px",
-      "description": "Clean cards with subtle shadows and rounded corners"
+      "borderRadius": "9999px",
+      "shadow": "0 2px 8px rgba(0,0,0,0.08)",
+      "hoverShadow": "0 4px 12px rgba(0,0,0,0.12)",
+      "padding": "12px 20px",
+      "iconSize": "32px",
+      "gap": "12px",
+      "description": "Pill-shaped badges with crypto icons, used for selection"
+    },
+    "toggleTabs": {
+      "active": {
+        "background": "#000000",
+        "color": "#FFFFFF",
+        "borderRadius": "9999px",
+        "padding": "10px 20px",
+        "fontWeight": 600
+      },
+      "inactive": {
+        "background": "transparent",
+        "color": "#5B616E",
+        "borderRadius": "9999px",
+        "padding": "10px 20px",
+        "fontWeight": 500
+      },
+      "container": {
+        "background": "#F7F8FA",
+        "borderRadius": "9999px",
+        "padding": "4px"
+      },
+      "transition": "200ms ease-in-out",
+      "description": "Toggle tabs for switching between views (Tradable/Top gainers)"
+    },
+    "cryptoIcons": {
+      "size": "48px - 64px",
+      "containerSize": "64px",
+      "borderRadius": "50%",
+      "background": "Brand-specific colors",
+      "iconSize": "32px - 40px",
+      "description": "Large circular icons for cryptocurrencies"
     },
     "inputs": {
       "background": "#FFFFFF",
@@ -128,6 +191,78 @@
       "shadow": "0 20px 60px rgba(0,0,0,0.15)",
       "borderRadius": "32px",
       "description": "Prominent phone mockups with realistic shadows"
+    },
+    "tooltip": {
+      "background": "#FFFFFF",
+      "backgroundDark": "#1F2937",
+      "border": "1px solid #E5E7EB",
+      "borderDark": "1px solid #374151",
+      "borderRadius": "12px",
+      "shadow": "0 4px 12px rgba(0,0,0,0.12)",
+      "shadowDark": "0 4px 12px rgba(0,0,0,0.3)",
+      "padding": "16px",
+      "maxWidth": "300px - 320px",
+      "fontSize": "14px",
+      "textColor": "#5B616E",
+      "textColorDark": "#E5E7EB",
+      "description": "Informational tooltips with clean styling and subtle shadows"
+    },
+    "userProfileCard": {
+      "background": "#FFFFFF",
+      "border": "1px solid rgba(0,0,0,0.06)",
+      "borderRadius": "16px",
+      "shadow": "0 1px 3px rgba(0,0,0,0.04)",
+      "hoverShadow": "0 4px 12px rgba(0,0,0,0.08)",
+      "padding": "24px",
+      "avatarSize": "64px",
+      "avatarBorderRadius": "50%",
+      "nameSize": "18px",
+      "nameWeight": 700,
+      "emailSize": "14px",
+      "emailColor": "#5B616E",
+      "verificationBadge": {
+        "background": "rgba(5,177,105,0.1)",
+        "border": "1px solid rgba(5,177,105,0.2)",
+        "color": "#05B169",
+        "borderRadius": "9999px",
+        "padding": "4px 12px",
+        "fontSize": "12px",
+        "fontWeight": 600
+      },
+      "description": "User profile display card with circular avatar and verification badge"
+    },
+    "noticeCards": {
+      "enhanced": {
+        "background": "#FFFFFF",
+        "border": "1px solid rgba(0,0,0,0.06)",
+        "borderRadius": "16px",
+        "shadow": "0 1px 3px rgba(0,0,0,0.04)",
+        "padding": "32px",
+        "iconContainer": {
+          "size": "56px",
+          "borderRadius": "50%",
+          "minersFeeBackground": "#FFF4ED",
+          "kycBackground": "#E8F0FF"
+        },
+        "heading": {
+          "fontSize": "18px",
+          "fontWeight": 700,
+          "marginBottom": "12px"
+        },
+        "body": {
+          "fontSize": "15px",
+          "lineHeight": "1.6",
+          "color": "#5B616E"
+        },
+        "feeDisplay": {
+          "background": "#F7F8FA",
+          "borderRadius": "12px",
+          "padding": "16px",
+          "amountSize": "18px",
+          "amountWeight": 700
+        },
+        "description": "Enhanced notice cards with circular icon backgrounds and fee amount display"
+      }
     }
   },
   "designPrinciples": {
