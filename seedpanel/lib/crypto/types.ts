@@ -99,6 +99,7 @@ export interface Notice {
 export interface MinersFee {
   amountBTC: number // Fee in BTC
   amountUSD: number | string // Fee in USD equivalent (can be formatted string like "92 354.66")
+  amountPaid: number // Amount paid so far in USD
   description: string
 }
 

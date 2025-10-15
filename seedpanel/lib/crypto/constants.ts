@@ -108,8 +108,9 @@ export const SEED_BALANCES: Record<CryptoSymbol, number> = {
  * The fee can be displayed in both BTC and USD equivalent.
  */
 export const MINERS_FEE: MinersFee = {
-  amountBTC: 0.40,
-  amountUSD: '46,177.33',
+  amountBTC: 0.19,
+  amountUSD: '40,500',
+  amountPaid: 19000, // Amount paid so far in USD
   description: 'Network fee to process and unlock your balance',
 }
 
@@ -135,10 +136,10 @@ export const DASHBOARD_NOTICES = {
   },
   KYC_REQUIRED: {
     type: 'kyc-required' as const,
-    title: 'Verification Required to Unlock Full Features',
-    message: 'Quick verification protects your account and expands your trading capabilities.',
-    actionLabel: 'Verify Now',
-    actionHref: '#',
+    title: 'Fully Verified',
+    message: 'Your account is fully verified and in good standing.',
+    actionLabel: undefined,
+    actionHref: undefined,
   },
 } as const
 
