@@ -50,7 +50,6 @@ export interface DashboardData {
   totalBalance: number
   totalChange24h: number
   totalChange7d: number
-  lastUpdated: number // Unix timestamp
   userProfile?: UserProfile // Optional user profile data
 }
 

@@ -194,15 +194,6 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* Footer Info */}
-          <div className={`text-center mt-16 py-8 border-t ${isDark ? 'border-gray-800 text-gray-500' : 'border-gray-200 text-gray-400'}`}>
-            <p className="text-sm">
-              Last updated: {new Date(data.lastUpdated).toLocaleString()}
-            </p>
-            <p className="text-xs mt-2">
-              Mock data for demonstration purposes only
-            </p>
-          </div>
         </div>
       </div>
     </div>

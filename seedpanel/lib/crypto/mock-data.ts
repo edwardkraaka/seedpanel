@@ -77,7 +77,6 @@ export function generateMockDashboardData(): DashboardData {
     totalBalance: 664343.89, // Fixed locked balance amount
     totalChange24h: parseFloat(totalChange24h.toFixed(2)),
     totalChange7d: parseFloat(totalChange7d.toFixed(2)),
-    lastUpdated: Date.now(),
     userProfile: DEFAULT_USER_PROFILE,
   }
 }
